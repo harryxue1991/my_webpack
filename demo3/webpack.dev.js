@@ -11,9 +11,12 @@ module.exports = merge(common, {
     },
     devServer: {
         port: 9999,
-        inline: true,
+        hot: true,
+        // inline: true,
         // 文件更新，页面自动刷新
         historyApiFallback: true
-        }
-    }
-)
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
+})
