@@ -8,6 +8,10 @@ module.exports = merge(common, {
                 path: path.resolve(__dirname, 'dist'),
                 publicPath: '/',
                 filename: '[name].[hash:8].js'
-        }
+        },
+        plugins: [
+                new webpack.optimize.UglifyJsPlugin({ compress: {warnings: false}})
+                // js 压缩
+        ]
     }
 )

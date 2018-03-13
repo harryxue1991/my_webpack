@@ -8,17 +8,6 @@ let commonConfig = {
         main: path.resolve(__dirname, 'src/main'),
         vendors: ['vue']
     },
-    output: {
-        path: path.resolve(__dirname, '/'),
-        publicPath: '/',
-        filename: '[name].[hash:8].js'
-    },
-    devServer: {
-        port: 9999,
-        inline: true,
-        // 文件更新，页面自动刷新
-        historyApiFallback: true
-    },
     module: {
         rules: [{
                 test: /\.vue$/,
@@ -26,7 +15,12 @@ let commonConfig = {
             },
             {
                 test: /\.js$/,
-                use: 'babel-loader',
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015']
+                    }
+                }],
                 /* 排除安装目录的文件 */
                 exclude: /node_modules/
             },
