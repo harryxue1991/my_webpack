@@ -14,7 +14,8 @@ module.exports = merge(common, {
         hot: true,
         // inline: true,
         // 文件更新，页面自动刷新
-        historyApiFallback: true
+        historyApiFallback: true,
+        stats: "errors-only"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
