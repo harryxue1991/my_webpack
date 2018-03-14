@@ -9,6 +9,7 @@ module.exports = merge(common, {
         publicPath: '/',
         filename: '[name].[hash:8].js'
     },
+    devtool: '#source-map',
     devServer: {
         port: 9999,
         hot: true,
